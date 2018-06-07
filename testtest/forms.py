@@ -1,9 +1,7 @@
 from django import forms
-from .models import Object
+from .models import ObjectFlat
 
-class ObjectForm(forms.ModelForm):
-
+class ObjectFlatForm(forms.ModelForm):
     class Meta:
-        model = Object
+        model = ObjectFlat
         fields = ('zone', 'rooms', 'floor', 'wall_material', 'remont', 'parking', 'lift',)
-
