@@ -33,7 +33,7 @@ class ObjectFlat (models.Model):
     WALL_MATERIAL = (
         ('kirp','кирпич'),
         ('pan', 'панель'),
-        ('nd', 'нет данных'),
+        ('nd', ''),
     )
     wall_material = models.CharField(max_length=20, choices=WALL_MATERIAL, default='нет данных')
 
@@ -51,7 +51,7 @@ class ObjectFlat (models.Model):
     PARKING = (
         ('yes', 'во дворе'),
         ('no', 'нет'),
-        ('hz', 'нет данных')
+        ('hz', '')
     )
     parking = models.CharField(max_length=20, choices=PARKING, default='hz')
 
@@ -60,6 +60,8 @@ class ObjectFlat (models.Model):
     LIFT = (
         ('yes', 'есть'),
         ('no', 'нет'),
-        ('hz', 'нет данных'),
+        ('hz', ''),
     )
     lift = models.CharField(max_length=20, choices=LIFT, default='hz')
+
+   # name = models.CharField(max_length=20)

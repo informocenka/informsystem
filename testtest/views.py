@@ -2,7 +2,7 @@ from .forms import ObjectFlatForm
 from django.shortcuts import redirect
 from .models import ObjectFlat
 from django.shortcuts import render, get_object_or_404
-from .forms import ObjectFlatForm
+
 
 
 def base_page(request):
@@ -10,7 +10,9 @@ def base_page(request):
 
 def valuation_result(request, pk):
     valuation = get_object_or_404(ObjectFlat, pk=pk)
-    return render(request, 'testtest//valuation_result.html', {'valuation': valuation})
+    price = 15*3
+    return render(request, 'testtest/valuation_result.html', {'price': price})
+
 
 def valuation_new(request):
     if request.method == 'POST':
@@ -21,3 +23,7 @@ def valuation_new(request):
     else:
         form = ObjectFlatForm()
     return render(request, 'testtest/fill_form.html', {'form': form})
+
+
+
+
