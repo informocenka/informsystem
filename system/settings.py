@@ -41,9 +41,6 @@ INSTALLED_APPS = [
     'import_export',
 ]
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-MEDIA_URL = '/media/'#сама прописывала ссылка:
-# http://qaru.site/questions/13808/need-a-minimal-django-file-upload-example
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
