@@ -9,7 +9,7 @@ def get_data():
     return data
 
 def get_av_price(prices):
-    get_data()
+    #get_data()
     return sum(prices)/len(prices)
 
 def get_price(zone, rooms, floor, wall_material, remont, lift, parking):
