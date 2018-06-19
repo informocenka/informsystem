@@ -1,6 +1,7 @@
 from .forms import ObjectFlatForm
 from django.shortcuts import redirect
-from .models import ObjectFlat, Table
+from .models import ObjectFlat
+    # , Table
 from django.shortcuts import render, get_object_or_404
 from django_pandas.io import read_frame
 #from .get_price import get_av_price
@@ -18,16 +19,13 @@ def valuation_result(request, pk):
     #prices = df.price
     #price = get_av_price(prices)
 
-
-
-
     #object_val = {'Район': df.zone, 'Комнат': df.rooms,  'Этаж': df.floor,
                   #'Материал стен': df.wall_material, 'Ремонт': df.remont, 'Парковка': df.parking, 'Лифт': df.lift}
 
 
-    #price = 15*3
+    price = 15*3
     #return render(request, 'testtest/valuation_result.html', {'price': price})
-    return render(request, 'testtest/valuation_result.html', {'df': valuation})
+    return render(request, 'testtest/valuation_result.html', {'df': price})
 
 
 def valuation_new(request):
