@@ -3,7 +3,7 @@ from django.shortcuts import redirect
 from .models import ObjectFlat, Table
 from django.shortcuts import render, get_object_or_404
 from django_pandas.io import read_frame
-from .get_price import get_av_price
+#from .get_price import get_av_price
 
 
 def base_page(request):
@@ -12,11 +12,11 @@ def base_page(request):
 def valuation_result(request, pk):
     valuation = get_object_or_404(ObjectFlat, pk=pk)
 
-    qs = Table.objects.all()
+    #qs = Table.objects.all()
     #qs = Table.objects.filter(zone = valuation.zone)
-    df = read_frame(qs)
-    prices = df.price
-    price = get_av_price(prices)
+    #df = read_frame(qs)
+    #prices = df.price
+    #price = get_av_price(prices)
 
 
 
@@ -27,7 +27,7 @@ def valuation_result(request, pk):
 
     #price = 15*3
     #return render(request, 'testtest/valuation_result.html', {'price': price})
-    return render(request, 'testtest/valuation_result.html', {'df': price})
+    return render(request, 'testtest/valuation_result.html', {'df': valuation})
 
 
 def valuation_new(request):
