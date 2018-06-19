@@ -3,7 +3,7 @@ from django.shortcuts import redirect
 from .models import ObjectFlat
     # , Table
 from django.shortcuts import render, get_object_or_404
-from django_pandas.io import read_frame
+#from django_pandas.io import read_frame
 #from .get_price import get_av_price
 
 
