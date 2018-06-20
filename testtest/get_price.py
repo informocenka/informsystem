@@ -10,7 +10,8 @@ def get_data():
 
 def get_av_price(prices):
     #get_data()
-    return sum(prices)/len(prices)
+    #return sum(prices)/len(prices)
+    return 'чё как работается, Никитос?'
 
 def get_price(zone, rooms, floor, wall_material, remont, lift, parking):
     object_val = {'Район': zone,
