@@ -3,27 +3,25 @@ from django.shortcuts import redirect
 from .models import ObjectFlat, Table
 from django.shortcuts import render, get_object_or_404
 from django_pandas.io import read_frame
-from .get_price import get_av_price
+from .get_price import get_data
+from .get_price import get_price
 
 
 def base_page(request):
     return render(request, 'testtest/base.html', {})
 
-def valuation_result(request, pk):
+def valuation_result(request, pk):   #передать объект оценки в функцию get_price из файла get_price
     valuation = get_object_or_404(ObjectFlat, pk=pk)
-
-    qs = Table.objects.all()
+    #df = read_frame(valuation)
+    #qs = Table.objects.all()
     #qs = Table.objects.filter(zone = valuation.zone)
-    df = read_frame(qs)
-    prices = df.price
-    price = get_av_price(prices)
+    #df = read_frame(qs)
+    #prices = df.price
 
-    #object_val = {'Район': df.zone, 'Комнат': df.rooms,  'Этаж': df.floor,
-                  #'Материал стен': df.wall_material, 'Ремонт': df.remont, 'Парковка': df.parking, 'Лифт': df.lift}
+    #df = [valuation.zone, valuation.rooms, valuation.floor, valuation.wall_material, valuation.remont, valuation.lift, valuation.parking]
 
-
-    #price = 15*3
-    #return render(request, 'testtest/valuation_result.html', {'price': price})
+    #price = get_price(valuation.zone, valuation.rooms, valuation.floor, valuation.wall_material, valuation.remont, valuation.lift, valuation.parking)
+    price = get_price('Автозаводский', '1 комната', 'первый этаж', 'нет данных', 'типовой', 'нет данных', 'нет данных')
     return render(request, 'testtest/valuation_result.html', {'df': price})
 
 
